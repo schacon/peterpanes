@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Browser</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <form id="nav-form" class="nav-form">
+        <input
+          id="url-input"
+          class="url-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Enter URL"
+        />
+        <button class="go-button" type="submit">Go</button>
+      </form>
+    </header>
+    <main class="content">
+      <webview id="browser-view" src="https://example.com"></webview>
+    </main>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

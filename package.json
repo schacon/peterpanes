@@ -1,0 +1,12 @@
+{
+  "name": "mini-electron-browser",
+  "version": "1.0.0",
+  "description": "A minimal Electron web browser with only a URL bar.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}

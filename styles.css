@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 44px 1fr;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #dcdcdc;
+  background: #f7f7f7;
+}
+
+.nav-form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.url-input {
+  flex: 1;
+  height: 28px;
+  border: 1px solid #c8c8c8;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 13px;
+  box-shadow: none;
+  outline: none;
+}
+
+.url-input:focus {
+  border-color: #7daaf7;
+}
+
+.go-button {
+  height: 28px;
+  border: 1px solid #c8c8c8;
+  border-radius: 6px;
+  padding: 0 12px;
+  background: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+#browser-view {
+  width: 100%;
+  height: 100%;
+}
