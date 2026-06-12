@@ -29,4 +29,10 @@ browserView.addEventListener("did-navigate-in-page", (event) => {
   urlInput.value = event.url;
 });
 
+if (window.miniBrowser && typeof window.miniBrowser.onOpenExternalUrl === "function") {
+  window.miniBrowser.onOpenExternalUrl((url) => {
+    navigateTo(url);
+  });
+}
+
 urlInput.value = browserView.src;

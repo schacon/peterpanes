@@ -1,12 +1,50 @@
 {
-  "name": "mini-electron-browser",
+  "name": "peterpanes",
   "version": "1.0.0",
-  "description": "A minimal Electron web browser with only a URL bar.",
+  "description": "A minimal Electron web browser with no shadow.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "icon:build": "bash ./scripts/generate-icon.sh",
+    "prepack": "npm run icon:build",
+    "predist": "npm run icon:build",
+    "predist:mac": "npm run icon:build",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac"
   },
   "devDependencies": {
-    "electron": "^35.0.0"
+    "electron": "^35.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.peterpanes.peterpanes",
+    "productName": "Peter Panes",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "package.json"
+    ],
+    "asar": true,
+    "protocols": [
+      {
+        "name": "Web URLs",
+        "schemes": [
+          "http",
+          "https"
+        ]
+      }
+    ],
+    "mac": {
+      "icon": "build/icon.png",
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    }
   }
 }
